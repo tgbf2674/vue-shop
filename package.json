@@ -16,6 +16,7 @@
     "sass-loader": "7.x",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
+    "vue-table-with-tree-grid": "0.2.4",
     "webpack": "^5.27.0"
   },
   "devDependencies": {
