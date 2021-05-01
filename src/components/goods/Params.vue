@@ -283,6 +283,7 @@ export default {
       if (row.inputValue.trim().length === 0) {
         row.inputValue = ''
         row.inputVisible = false
+        return
       }
       // 如果没有return,则进行后续处理
       row.attr_vals.push(row.inputValue.trim())
