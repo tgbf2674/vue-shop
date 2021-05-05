@@ -2,18 +2,23 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/css/global.css'
-import './plugins/element.js'
+// import './plugins/element.js'
 import './assets/fonts/iconfont.css'
 import axios from 'axios'
 import TreeTable from 'vue-table-with-tree-grid'
 import VueQuillEditor from 'vue-quill-editor'
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
+import NProgress from 'nprogress'
+
 Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://www.ysqorz.top:8888/api/private/v1/'
+// 在请求拦截器中展示进度条
 axios.interceptors.request.use(config => {
+  NProgress.start()
   config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
+axios.interceptors.response.use(config => {
+  NProgress.done()
   return config
 })
 Vue.use(VueQuillEditor)

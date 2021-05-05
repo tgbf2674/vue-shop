@@ -100,7 +100,6 @@ export default {
   .form-container {
     width: 450px;
     height: 300px;
-    border: 1px solid red;
     background: #ffffff;
     border-radius: 4px;
     position: relative;
